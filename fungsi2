@@ -1,0 +1,37 @@
+# Menu Pilihan
+while True:
+    print("Pilih fungsi yang ingin dijalankan:")
+    print("1. Faktorial Rekursif")
+    print("2. Fibonacci")
+    pilihan = input("Masukkan pilihan (1/2): ")
+
+    if pilihan == '1':
+        n = int(input("Masukkan nilai n untuk faktorial: "))
+        
+        # Faktorial Rekursif dengan iterasi setiap langkah
+        def faktorial_rekursif(n, iterasi=1):
+            print(f"Iterasi {iterasi}: {n}!" if n != 0 else f"Iterasi {iterasi}: 0! = 1")
+            if n == 0 or n == 1:
+                return 1
+            else:
+                return n * faktorial_rekursif(n - 1, iterasi + 1)
+        
+        hasil = faktorial_rekursif(n)
+        print(f"Faktorial dari {n} adalah {hasil}")
+        break
+    
+    elif pilihan == '2':
+        n = int(input("Masukkan nilai n untuk Fibonacci: "))
+        
+        # Fibonacci dengan iterasi setiap langkah
+        a, b = 0, 1
+        for i in range(n):
+            print(f"Iterasi {i + 1}: {a}")
+            a, b = b, a + b
+        hasil = a
+        
+        print(f"Angka Fibonacci ke-{n} adalah {hasil}")
+        break
+    
+    else:
+        print("Pilihan tidak valid. Silakan pilih 1 atau 2.")
